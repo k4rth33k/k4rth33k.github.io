@@ -342,7 +342,7 @@ button:focus {
   @media (max-width: 680px) {
     .banner-content {
       padding: 48px 20px;
-      background: #fff;
+      background: #dce8e4;
       margin: 0 15px; } }
   .banner-content .primary-btn {
     /*background: #e45447;*/
@@ -2881,7 +2881,7 @@ h6 {
   .social_widget .list li:last-child {
     margin-right: 0px; }
   .social_widget .list li:hover a {
-    color: #e45447; }
+    color: #207d5f; }
 
 .copyright {
   margin-top: 40px; }
