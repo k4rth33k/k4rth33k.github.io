@@ -13,70 +13,99 @@ $(document).ready(function(){
         $('#contactForm').validate({
             rules: {
                 name: {
-                    required: true,
-                    minlength: 2
+                    required: false,
+                    minlength: 0
                 },
                 subject: {
-                    required: true,
-                    minlength: 4
+                    required: false,
+                    minlength: 0
                 },
                 number: {
-                    required: true,
-                    minlength: 5
+                    required: false,
+                    minlength: 0
                 },
                 email: {
-                    required: true,
-                    email: true
+                    required: false,
+                    email: false
                 },
                 message: {
-                    required: true,
-                    minlength: 20
+                    required: false,
+                    minlength: 0
                 }
             },
             messages: {
                 name: {
-                    required: "come on, you have a name, don't you?",
-                    minlength: "your name must consist of at least 2 characters"
+                    required: "Come on, you have a name, don't you?",
+                    minlength: "Your name must consist of at least 2 characters"
                 },
                 subject: {
-                    required: "come on, you have a subject, don't you?",
-                    minlength: "your subject must consist of at least 4 characters"
+                    required: "Come on, you have a subject, don't you?",
+                    minlength: "Your subject must consist of at least 4 characters"
                 },
                 number: {
-                    required: "come on, you have a number, don't you?",
-                    minlength: "your Number must consist of at least 5 characters"
+                    required: "Come on, you have a number, don't you?",
+                    minlength: "Your Number must consist of at least 5 characters"
                 },
                 email: {
-                    required: "no email, no message"
+                    required: "No email, No message"
                 },
                 message: {
-                    required: "um...yea, you have to write something to send this form.",
-                    minlength: "thats all? really?"
+                    required: "Um...yea, you have to write something to send this form.",
+                    minlength: "That's all? Really?"
                 }
             },
             submitHandler: function(form) {
-                $(form).ajaxSubmit({
-                    type:"POST",
-                    data: $(form).serialize(),
-                    url:"contact_process.php",
-                    success: function() {
-                        $('#contactForm :input').attr('disabled', 'disabled');
-                        $('#contactForm').fadeTo( "slow", 1, function() {
-                            $(this).find(':input').attr('disabled', 'disabled');
-                            $(this).find('label').css('cursor','default');
-                            $('#success').fadeIn()
-                            $('.modal').modal('hide');
-		                	$('#success').modal('show');
-                        })
-                    },
-                    error: function() {
-                        $('#contactForm').fadeTo( "slow", 1, function() {
-                            $('#error').fadeIn()
-                            $('.modal').modal('hide');
-		                	$('#error').modal('show');
-                        })
-                    }
-                })
+                        fetch('http://127.0.1.1:8000/api/', {
+                            method: 'post',
+                            mode: 'no-cors',
+                            headers: {
+                              "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                              "X-Content-Type-Options": "nosniff"
+                            },
+                            body: 'foo=bar&lorem=ipsum'
+                          })
+                          // .then(json)
+                          .then(function (data) {
+                            console.log('Request succeeded with JSON response', data);
+                          })
+                          .catch(function (error) {
+                            console.log('Request failed', error);
+                          });
+                // $(form).ajaxSubmit({
+                //     type:"GET",
+                //     // data: $(form).serialize(),
+                //     url:"contact_process.php",
+                //     url:"https://www.google.com/",
+                //     success: function(data) {
+                //         console.log(data);
+                //         $('#contactForm :input').attr('disabled', 'disabled');
+                //         $('#contactForm').fadeTo( "slow", 1, function() {
+                //             $(this).find(':input').attr('disabled', 'disabled');
+                //             $(this).find('label').css('cursor','default');
+                //             $('#success').fadeIn()
+                //             $('.modal').modal('hide');
+		              //   	$('#success').modal('show');
+                //         })
+                //     },
+                //     error: function() {
+                //         $('#contactForm').fadeTo( "slow", 1, function() {
+                //             $('#error').fadeIn()
+                //             $('.modal').modal('hide');
+		              //   	$('#error').modal('show');
+                //         })
+                //     }
+                // })
+                // $.ajax({
+                //     type: 'GET',
+                //     url: 'https://jsonplaceholder.typicode.com/todos/1',
+                //     dataType: 'json',
+                //     contentType: "text/html",
+                //     headers: {
+                //         "X-Content-Type-Options": "nosniff"
+                //     }
+                // }).done(function(data) { 
+                //     console.log(data);
+                //     });
             }
         })
     })

@@ -785,6 +785,7 @@ pre code {
     -ms-flex: 0 0 75%;
     flex: 0 0 75%;
     max-width: 75%
+    margin-left: 20px;
 }
 
 .col-10 {
@@ -880,6 +881,9 @@ pre code {
     order: 12
 }
 
+.offset-0 {
+    margin-left: 2px;
+}
 .offset-1 {
     margin-left: 8.333333%
 }
@@ -1325,7 +1329,8 @@ pre code {
     .col-lg-9 {
         -ms-flex: 0 0 75%;
         flex: 0 0 75%;
-        max-width: 75%
+        max-width: 75%;
+        padding-left: 60px;
     }
     .col-lg-10 {
         -ms-flex: 0 0 83.333333%;
