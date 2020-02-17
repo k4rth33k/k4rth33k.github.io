@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
 	<link rel="stylesheet" href="vendors/animate-css/animate.css">
 	<link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+	<link rel="preload" href="img/banner/banner-bg1.jpg" as="image"> 
 	<!-- main css -->
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -38,31 +39,12 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
-							<!-- <li class="nav-item submenu dropdown">
-								<a class="nav-link" href="#">Portfolio</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-									<li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portrfolio Details</a>
-								</ul>
-							</li> -->
-							<!-- <li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a>
-								</ul>
-							</li> -->
-							<!-- <li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Blog</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-								</ul>
-							</li> -->
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+							<li class="nav-item active" id="home-nav"><a class="nav-link" href="#home" onclick="active('home')">Home</a></li>
+							<li class="nav-item" id="about-nav"><a class="nav-link" href="#about" onclick="active('about')">About</a></li>
+							<li class="nav-item" id="projects-nav"><a class="nav-link" href="#projects" onclick="active('projects')">Projects</a></li>
+							<li class="nav-item" id="contact-nav"><a class="nav-link" href="#contact" onclick="active('contact')">Contact</a></li>
+							<!-- <li class="nav-item"><a class="nav-link" href="about-us.html">Social</a></li> -->
+							<li class="nav-item"><a class="nav-link" href="files/Kartheek Surampudi.pdf" download="Kartheek Surampudi.pdf">Resume</a></li>
 						</ul>
 					</div>
 				</div>
@@ -79,7 +61,7 @@
 					<div class="banner-content col-lg-12 justify-content-center">
 						<h1>Kartheek Surampudi</h1>
 						<h3>Personal portfolio Website</h3>
-						<a href="#" class="primary-btn">Hire Me</a>
+						<a href="mailto:kartheek2000mike@gmail.com" class="primary-btn">Hire Me</a>
 					</div>
 				</div>
 			</div>
@@ -109,15 +91,41 @@
  -->	</section>
 	<!--================End Home Banner Area =================-->
 
+	<!--================ Start About Area =================-->
+	<section class="about-area section_gap gray-bg" id="about">
+		<div class="container">
+			<div class="row align-items-center justify-content-between">
+				<div class="col-lg-5 about-left">
+					<img class="img-fluid" src="img/about-img.png" alt="">
+				</div>
+				<div class="col-lg-6 col-md-12 about-right">
+					<div class="main-title text-left">
+						<h1>about myself</h1>
+					</div>
+					<div class="mb-50 wow fadeIn" data-wow-duration=".8s">
+						<p>
+							I am an undergraduate student from India. Intrests and skills include Deep Learning and software development. I'm an open source contributor and a passionate programmer. In love with Python and anything that is touched by it.
+						</p>
+						<!-- <p>That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is
+							often
+							laughed.
+						</p> -->
+					</div>
+					<a href="#footer" class="primary-btn">More Info</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End About Area =================-->
+
 	<!--================ Start Portfolio Area =================-->
-	<!-- <section class="section_gap portfolio_area" id="work">
+	<section class="section_gap portfolio_area" id="projects">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-6 text-center">
 					<div class="main-title">
 						<h1>Latest Works</h1>
-						<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may
-							see some for as low as $.17 each.</p>
+						<p>The list of my projects sorted by where I've worked on them. Details of each project can be found on my <a href="https://github.com/k4rth33k/" style="color: #56e39f">Github</a></p>
 					</div>
 				</div>
 			</div>
@@ -126,16 +134,82 @@
 					<div class="projects_fillter">
 						<ul class="filter list">
 							<li class="active" data-filter="*">All Categories</li>
-							<li data-filter=".brand">Branding</li>
-							<li data-filter=".work">Creative Work </li>
-							<li data-filter=".web">Web Design</li>
+							<li data-filter=".work">Personal/Academic </li>
+							<li data-filter=".intern">Internships</li>
+							<li data-filter=".upcoming">Upcoming</li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="projects_inner row grid">
+			<div class="projects_inner row grid"> 
 				<div class="grid-sizer col-sm-6 col-md-3 col-lg-3"></div>
-				<div class="col-lg-6 col-sm-6 col-sm-12 brand web grid-item">
+				<div class="col-lg-6 col-sm-6 col-sm-12 intern grid-item">
+					<div class="projects_item">
+						<img class="img-fluid w-100" src="img/works/deepC.jpeg" alt="">
+						<div class="projects_text">
+							<a href="https://github.com/ai-techsystems/dnnCompiler">
+								<h4>DNN Compiler</h4>
+							</a>
+							<p>Open source Project</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-sm-6 col-sm-12 intern grid-item">
+					<div class="projects_item">
+						<img class="img-fluid" src="img/works/smartctl.png" alt="" width="337px" height="360px">
+						<div class="projects_text">
+							<a href="https://www.youtube.com/watch?v=n3ctBcmH9Nw">
+								<h4>Disk Health Monitoring System</h4>
+							</a>
+							<p>Python/Networking Project</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-sm-6 col-sm-12 work grid-item">
+					<div class="projects_item">
+						<img class="img-fluid w-75" src="img/works/Presence-Logo-PNG.png" alt="">
+						<div class="projects_text">
+							<a href="https://www.linkedin.com/pulse/presence-modern-ai-powered-approach-attendance-system-surampudi/">
+								<h4>Presence</h4>
+							</a>
+							<p>Facial Recog Attendance App</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-sm-6 col-sm-12 work grid-item">
+					<div class="projects_item">
+						<img class="img-fluid w-100" src="img/works/framework.png" alt="">
+						<div class="projects_text">
+							<a href="portfolio-details.html">
+								<h4>Text To Image</h4>
+							</a>
+							<p>A web interface over AttnGAN implementation</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-sm-6 col-sm-12 upcoming grid-item">
+					<div class="projects_item">
+						<img class="img-fluid w-100" src="img/works/al.png" alt="">
+						<div class="projects_text">
+							<a href="portfolio-details.html">
+								<h4>AL Tool</h4>
+							</a>
+							<p>A GUI for data annotation using active learning</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-sm-6 col-sm-12 upcoming grid-item">
+					<div class="projects_item">
+						<img class="w-100" src="img/works/coherence.png" alt="">
+						<div class="projects_text">
+							<a href="portfolio-details.html">
+								<h4>SinginGAN</h4>
+							</a>
+							<p>A GAN based experiment on Indian Music</p>
+						</div>
+					</div>
+				</div>
+				<!--<div class="col-lg-6 col-sm-6 col-sm-12 brand web grid-item">
 					<div class="projects_item">
 						<img class="img-fluid w-100" src="img/works/work1.jpg" alt="">
 						<div class="projects_text">
@@ -222,38 +296,11 @@
 							<p>Client Project</p>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-	<!--================ End Portfolio Area =================-->
-
-	<!--================ Start About Area =================-->
-	<section class="about-area section_gap gray-bg">
-		<div class="container">
-			<div class="row align-items-center justify-content-between">
-				<div class="col-lg-5 about-left">
-					<img class="img-fluid" src="img/about-img.png" alt="">
-				</div>
-				<div class="col-lg-6 col-md-12 about-right">
-					<div class="main-title text-left">
-						<h1>about myself</h1>
-					</div>
-					<div class="mb-50 wow fadeIn" data-wow-duration=".8s">
-						<p>
-							I am an undergraduate student in India. Intrests and skills include Deep Learning and software development. I'm an open source contributor and a passionate programmer.
-						</p>
-						<!-- <p>That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is
-							often
-							laughed.
-						</p> -->
-					</div>
-					<a href="#" class="primary-btn">More Info</a>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
-	<!--================ End About Area =================-->
+	<!--================ End Portfolio Area =================-->
 
 	<!--================ Start Testimonial Area =================-->
 
@@ -396,7 +443,7 @@
 		</div>
 	</section> -->
 	<!-- Contact Area inserted  -->
-	<section class="contact_area section_gap">
+	<section class="contact_area section_gap" id="contact">
 		<div class="filter"></div>
         <div class="container">
         	<div class="text-center">
@@ -454,7 +501,7 @@
 	<!--================ End Newsletter Area =================-->
 
 	<!--================ Start Footer Area =================-->
-	<footer class="footer_area section_gap">
+	<footer class="footer_area section_gap" id="footer">
 		<div class="container">
 			<div class="row footer_inner justify-content-center">
 				<div class="col-lg-6 text-center">
@@ -463,7 +510,7 @@
 							<img src="img/logo.png" alt="">
 						</div>
 						<div class="f_title">
-							<h4>Follow Me</h4>
+							<h4>Find out more about me!</h4>
 						</div>
 						<ul class="list">
 							<li><a href="https://github.com/k4rth33k" target="_blank"><i class="fa fa-github"></i></a></li>
@@ -474,7 +521,7 @@
 					</aside>
 					<div class="copyright">
 						<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <a style="display: none" href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 					</div>
 				</div>
@@ -517,6 +564,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/active.js"></script>
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/popper.js"></script>
 	<script src="js/bootstrap.min.js"></script>

@@ -13,24 +13,24 @@ $(document).ready(function(){
         $('#contactForm').validate({
             rules: {
                 name: {
-                    required: false,
-                    minlength: 0
+                    required: true,
+                    minlength: 3
                 },
                 subject: {
-                    required: false,
-                    minlength: 0
+                    required: true,
+                    minlength: 4
                 },
                 number: {
                     required: false,
                     minlength: 0
                 },
                 email: {
-                    required: false,
-                    email: false
+                    required: true,
+                    email: true
                 },
                 message: {
-                    required: false,
-                    minlength: 0
+                    required: true,
+                    minlength: 10
                 }
             },
             messages: {
@@ -55,21 +55,35 @@ $(document).ready(function(){
                 }
             },
             submitHandler: function(form) {
-                        fetch('http://127.0.1.1:8000/api/', {
+                        fetch('http://kaprim.in/api/', {
+                        // fetch(' http://127.0.0.1:8000/api/', {
                             method: 'post',
                             mode: 'no-cors',
                             headers: {
                               "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
                               "X-Content-Type-Options": "nosniff"
                             },
-                            body: 'foo=bar&lorem=ipsum'
+                            body: $(form).serialize()
                           })
                           // .then(json)
                           .then(function (data) {
-                            console.log('Request succeeded with JSON response', data);
+                                console.log('Request succeeded with JSON response', data);
+                                $('#contactForm :input').attr('disabled', 'disabled');
+                                $('#contactForm').fadeTo( "slow", 1, function() {
+                                $(this).find(':input').attr('disabled', 'disabled');
+                                $(this).find('label').css('cursor','default');
+                                $('#success').fadeIn()
+                                $('.modal').modal('hide');
+                                $('#success').modal('show');
+                            })
                           })
                           .catch(function (error) {
-                            console.log('Request failed', error);
+                                console.log('Request failed', error);
+                                $('#contactForm').fadeTo( "slow", 1, function() {
+                                    $('#error').fadeIn()
+                                    $('.modal').modal('hide');
+                                    $('#error').modal('show');
+                                })
                           });
                 // $(form).ajaxSubmit({
                 //     type:"GET",

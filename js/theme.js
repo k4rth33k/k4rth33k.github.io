@@ -78,7 +78,7 @@
       });
     });
 
-    if (document.getElementById("work")) {
+    if (document.getElementById("projects")) {
       var $workGrid = $(".projects_inner").isotope({
         itemSelector: ".grid-item",
         percentPosition: true,
